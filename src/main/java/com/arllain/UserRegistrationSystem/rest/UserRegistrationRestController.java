@@ -53,9 +53,9 @@ public class UserRegistrationRestController {
 
 		logger.info("Criando o usuário: {}" + user.getName());
 		if (userJpaRepository.findByName(user.getName()) != null) {
-			logger.error("Não é possível criar o novo usuário. Um usuáro com o nome {} já existe", user.getName());			
+			logger.error("Não é possível alterar o usuário. Um usuáro com o nome {} já existe", user.getName());			
 			return new ResponseEntity<UserDTO>(new CustomErrorType(
-					"Não é possível criar o novo usuário." + "Um usuário com o nome " + user.getName() + " já existe."),
+					"Não é possível alterar usuário." + "Um usuário com o nome " + user.getName() + " já existe."),
 					HttpStatus.CONFLICT);
 		}
 
