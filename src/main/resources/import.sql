@@ -1,0 +1,3 @@
+--INSERT INTO users_password (userName, password, enabled, role) VALUES ('user'   , 'password', true, 'USER');
+--INSERT INTO users_password (userName, password, enabled, role) VALUES ('admin'  , 'password', true, 'ADMIN');
+--INSERT INTO users_password (userName, password, enabled, role) VALUES ('arllain', 'password', true, 'USER');

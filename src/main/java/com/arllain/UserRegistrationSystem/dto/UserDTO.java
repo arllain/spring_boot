@@ -10,7 +10,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name="Users")
+@Table(name="users")
 public class UserDTO {
 	
 	@Id
