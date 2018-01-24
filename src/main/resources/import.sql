@@ -1,3 +1,3 @@
---INSERT INTO users_password (userName, password, enabled, role) VALUES ('user'   , 'password', true, 'USER');
---INSERT INTO users_password (userName, password, enabled, role) VALUES ('admin'  , 'password', true, 'ADMIN');
---INSERT INTO users_password (userName, password, enabled, role) VALUES ('arllain', 'password', true, 'USER');
+INSERT INTO users_ROLEs (USER_ID, USER_NAME, PASSWORD, ENABLED, ROLE) VALUES (1, 'user'   , 'password', true, 'USER');
+INSERT INTO users_ROLEs (USER_ID, USER_NAME, PASSWORD, ENABLED, ROLE) VALUES (2, 'admin'  , 'password', true, 'ADMIN');
+INSERT INTO users_ROLEs (USER_ID, USER_NAME, PASSWORD, ENABLED, ROLE) VALUES (3, 'arllain', 'password', true, 'USER');

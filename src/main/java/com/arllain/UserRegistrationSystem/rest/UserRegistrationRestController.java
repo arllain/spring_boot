@@ -97,7 +97,7 @@ public class UserRegistrationRestController {
 	}
 
 	@DeleteMapping("/{id}")
-	@PreAuthorize("hasAuthority('ADMIN'")
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<UserDTO> deleteUser(@PathVariable("id") final Long id) {
 
 		Optional<UserDTO> optional = userJpaRepository.findById(id);

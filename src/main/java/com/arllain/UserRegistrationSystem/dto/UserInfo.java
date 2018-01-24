@@ -6,28 +6,28 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
-/*
+
 @Entity
-@Table(name = "users")
+@Table(name = "users_roles")
 public class UserInfo {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "userId")
-	private Long id;
+	@Column(name= "USER_ID")
+	private long id;
 
-	@Column(name = "userName")
+	@Column(name = "USER_NAME")
 	@NotEmpty
 	private String userName;
 
-	@Column(name = "password")
+	@Column(name = "PASSWORD")
 	@NotEmpty
 	private String password;
 
-	@Column(name = "enabled")
+	@Column(name = "ENABLED")
 	private boolean isEnabled;
 
-	@Column(name = "role")
+	@Column(name = "ROLE")
 	private String role;
 
 	public String getUserName() {
@@ -63,4 +63,3 @@ public class UserInfo {
 	}
 
 }
-*/

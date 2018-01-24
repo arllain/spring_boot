@@ -1,5 +1,5 @@
 package com.arllain.UserRegistrationSystem.service;
-/*
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -10,7 +10,6 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-
 import com.arllain.UserRegistrationSystem.dto.UserInfo;
 import com.arllain.UserRegistrationSystem.repository.UserInfoJpaRepository;
 
@@ -36,4 +35,4 @@ public class UserInfoDetailsService implements UserDetailsService {
         return authorities;
 	}
 
-}*/
+}

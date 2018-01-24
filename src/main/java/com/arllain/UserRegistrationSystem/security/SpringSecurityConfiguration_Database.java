@@ -1,5 +1,5 @@
 package com.arllain.UserRegistrationSystem.security;
-/*
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -17,11 +17,11 @@ import com.arllain.UserRegistrationSystem.service.UserInfoDetailsService;
 public class SpringSecurityConfiguration_Database extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
-	private UserInfoDetailsService userInforDetailsService;
+	private UserInfoDetailsService userInfoDetailsService;
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception{
-			authenticationManagerBuilder.userDetailsService(userInforDetailsService);
+			authenticationManagerBuilder.userDetailsService(userInfoDetailsService);
 	}
 	
 	@Override
@@ -33,4 +33,3 @@ public class SpringSecurityConfiguration_Database extends WebSecurityConfigurerA
 	
 	
 }
-*/
