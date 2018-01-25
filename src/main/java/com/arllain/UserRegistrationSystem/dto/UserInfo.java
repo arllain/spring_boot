@@ -5,37 +5,37 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name = "users_roles")
+@Table(name = "users")
 public class UserInfo {
 
 	@Id
 	@GeneratedValue
-	@Column(name= "USER_ID")
-	private long id;
+	@Column(name = "userid")
+	private Long id;
 
-	@Column(name = "USER_NAME")
+	@Column(name = "username")
 	@NotEmpty
-	private String userName;
+	private String username;
 
-	@Column(name = "PASSWORD")
+	@Column(name = "password")
 	@NotEmpty
 	private String password;
 
-	@Column(name = "ENABLED")
+	@Column(name = "enabled")
 	private boolean isEnabled;
 
-	@Column(name = "ROLE")
+	@Column(name = "role")
 	private String role;
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUsername(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -61,5 +61,5 @@ public class UserInfo {
 	public void setRole(String role) {
 		this.role = role;
 	}
-
+	
 }

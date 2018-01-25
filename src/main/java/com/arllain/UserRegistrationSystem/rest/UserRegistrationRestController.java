@@ -41,6 +41,7 @@ public class UserRegistrationRestController {
 
 	@GetMapping("/")
 	public ResponseEntity<List<UserDTO>> listAllUsers() {
+		logger.info("Consultando todos os usuarios");
 		List<UserDTO> users = userJpaRepository.findAll();
 		if (users.isEmpty()) {
 			return new ResponseEntity<List<UserDTO>>(HttpStatus.NO_CONTENT);
@@ -54,7 +55,7 @@ public class UserRegistrationRestController {
 
 		logger.info("Criando o usuário: {}" + user.getName());
 		if (userJpaRepository.findByName(user.getName()) != null) {
-			logger.error("Não é possível alterar o usuário. Um usuáro com o nome {} já existe", user.getName());			
+			logger.error("Não é possível alterar o usuário. Um usuáro com o nome {} já existe", user.getName());
 			return new ResponseEntity<UserDTO>(new CustomErrorType(
 					"Não é possível alterar usuário." + "Um usuário com o nome " + user.getName() + " já existe."),
 					HttpStatus.CONFLICT);
@@ -66,7 +67,7 @@ public class UserRegistrationRestController {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<UserDTO> getUserById(@PathVariable("id") final Long id) {
-
+		logger.info("Consultando usuario com o id {}", id);
 		Optional<UserDTO> optional = userJpaRepository.findById(id);
 		if (!optional.isPresent()) {
 			return new ResponseEntity<UserDTO>(new CustomErrorType("Usuário com o id " + id + " não encontrado"),
@@ -78,6 +79,8 @@ public class UserRegistrationRestController {
 
 	@PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UserDTO> updateUser(@PathVariable("id") final Long id, @RequestBody UserDTO user) {
+
+		logger.info("Atualizando o usuario com o id {}", id);
 
 		Optional<UserDTO> optional = userJpaRepository.findById(id);
 
@@ -100,6 +103,8 @@ public class UserRegistrationRestController {
 	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<UserDTO> deleteUser(@PathVariable("id") final Long id) {
 
+		logger.info("Deletando o usuario com o id {}", id);
+
 		Optional<UserDTO> optional = userJpaRepository.findById(id);
 
 		if (!optional.isPresent()) {
@@ -108,9 +113,9 @@ public class UserRegistrationRestController {
 					HttpStatus.NOT_FOUND);
 		}
 
-		userJpaRepository.deleteById(id);
+		userJpaRepository.delete(id);
 
-		return new ResponseEntity<UserDTO>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<UserDTO>(new CustomErrorType("Deleted User with id " + id + "."), HttpStatus.NO_CONTENT);
 	}
 
 }

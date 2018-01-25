@@ -4,13 +4,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Email;
 
 @Entity
-@Table(name="users")
 public class UserDTO {
 	
 	@Id
@@ -28,6 +27,7 @@ public class UserDTO {
 	@Column(name="ADDRESS")
 	private String address;
 	
+	@Email(message = "error.email.email")
 	@NotEmpty(message = "error.email.empty")
 	@Length(max = 80, message = "error.email.length")
 	@Column(name="EMAIL")

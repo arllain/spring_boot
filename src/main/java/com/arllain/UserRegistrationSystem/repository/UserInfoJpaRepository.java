@@ -7,5 +7,5 @@ import com.arllain.UserRegistrationSystem.dto.UserInfo;
 
 @Repository
 public interface UserInfoJpaRepository extends JpaRepository<UserInfo, Long> {
-	public UserInfo findByUserName(String userName);
+	public UserInfo findByUsername(String username);
 }

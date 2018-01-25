@@ -26,9 +26,12 @@ public class SpringSecurityConfiguration_Database extends WebSecurityConfigurerA
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
-		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().
-		authorizeRequests().antMatchers("/api/user/**").authenticated()
-		.and().httpBasic().realmName("Sistema de Registro de Usuario").and().csrf().disable();
+		http.sessionManagement()
+		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+		.authorizeRequests().antMatchers("/api/user/**").authenticated()
+		.and().authorizeRequests().antMatchers("/h2-console/**")
+		.authenticated().and().httpBasic()
+		.realmName("Sistema de Registro de Usuario").and().csrf().disable();		
 	}
 	
 	

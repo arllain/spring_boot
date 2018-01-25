@@ -11,7 +11,8 @@ import com.arllain.UserRegistrationSystem.dto.UserDTO;
 @Repository
 public interface UserJpaRepository extends JpaRepository<UserDTO, Long>{
 	
-	UserDTO findByName(String name);
 	Optional<UserDTO> findById(Long id);
+
+	UserDTO findByName(String name);
 
 }
