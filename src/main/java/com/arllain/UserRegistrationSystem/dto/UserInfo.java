@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name = "users")
+@Table(name="users")
 public class UserInfo {
 
 	@Id
@@ -61,5 +61,4 @@ public class UserInfo {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
 }

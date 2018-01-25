@@ -1,18 +1,16 @@
 package com.arllain.UserRegistrationSystem.repository;
 
-import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.arllain.UserRegistrationSystem.dto.UserDTO;
+import com.arllain.UserRegistrationSystem.dto.UsersDTO;
 
 
 @Repository
-public interface UserJpaRepository extends JpaRepository<UserDTO, Long>{
+public interface UserJpaRepository extends JpaRepository<UsersDTO, Long>{
 	
-	Optional<UserDTO> findById(Long id);
+	UsersDTO findById(Long id);
 
-	UserDTO findByName(String name);
+	UsersDTO findByName(String name);
 
 }

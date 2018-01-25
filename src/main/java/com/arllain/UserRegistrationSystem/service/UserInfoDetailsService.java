@@ -17,16 +17,15 @@ public class UserInfoDetailsService implements UserDetailsService {
 	
 	@Autowired
 	private UserInfoJpaRepository userInfoJpaRepository;
-	
 
 	@Override
-	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-		UserInfo user = userInfoJpaRepository.findByUserName(userName);
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		UserInfo user = userInfoJpaRepository.findByUsername(username);
 		if(user == null) {
-			throw new UsernameNotFoundException("Usuário não encontrado com o nome: " + userName);
+			throw new UsernameNotFoundException("Usuário não encontrado com o nome: " + username);
 		}
 		
-		return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),getAuthorities(user));
+		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),getAuthorities(user));
 	}
 	
 	private Collection<GrantedAuthority> getAuthorities(UserInfo user){

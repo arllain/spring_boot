@@ -1,8 +1,8 @@
 package com.arllain.UserRegistrationSystem.Exception;
 
-import com.arllain.UserRegistrationSystem.dto.UserDTO;
+import com.arllain.UserRegistrationSystem.dto.UsersDTO;
 
-public class CustomErrorType extends UserDTO {
+public class CustomErrorType extends UsersDTO {
 	
 	private String errorMessage;
 	
@@ -10,7 +10,6 @@ public class CustomErrorType extends UserDTO {
 		this.errorMessage = errorMessage;
 	}
 	
-	@Override
 	public String getErrorMessage() {
 		return errorMessage;
 	}

@@ -5,17 +5,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.hibernate.validator.constraints.Email;
 
 @Entity
-public class UserDTO {
+public class UsersDTO {
 	
 	@Id
 	@GeneratedValue
 	@Column(name= "USER_ID")
-	private long id;
+	private Long id;
 	
 	@NotEmpty(message = "error.name.empty")
 	@Length(max = 50, message = "error.name.length")
@@ -33,11 +33,11 @@ public class UserDTO {
 	@Column(name="EMAIL")
 	private String email;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -63,9 +63,5 @@ public class UserDTO {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getErrorMessage() {
-		return null;
 	}
 }

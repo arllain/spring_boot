@@ -8,9 +8,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication
-@ComponentScan({"com.arllain.UserRegistrationSystem.service"})
-@EntityScan("com.arllain.UserRegistrationSystem.dto")
-@EnableJpaRepositories("com.arllain.UserRegistrationSystem.repository")
+//@ComponentScan({"com.arllain.UserRegistrationSystem.service"})
+//@EntityScan("com.arllain.UserRegistrationSystem.dto")
+//@EnableJpaRepositories("com.arllain.UserRegistrationSystem.repository")
 public class UserRegistrationSystemApplication {
 
 	public static void main(String[] args) {
